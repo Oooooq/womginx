@@ -5,7 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DYNX Proxy</title>
   <link rel="shortcut icon" href="logo.png" type="image/png">
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(270deg, #0d0d0d, #990000);
+      background-size: 400% 400%;
+      animation: flowBg 10s ease infinite;
+      color: white;
+    }
+
+    @keyframes flowBg {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glow-text {
+      font-size: 2.5rem;
+      text-align: center;
+      animation: textPulse 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes textPulse {
+      0% {
+        color: #ff0000;
+        text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000;
+      }
+      100% {
+        color: #000;
+        text-shadow: 0 0 20px #990000, 0 0 40px #990000;
+      }
+    }
+
+    .container {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .navbar {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: #ccc;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    .navbar a.active,
+    .navbar a:hover {
+      background: rgba(255, 0, 0, 0.2);
+      color: #ff0000;
+      box-shadow: 0 0 10px #ff0000;
+    }
+
+    input, button {
+      font-size: 1rem;
+      padding: 10px;
+      margin: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    input {
+      width: 300px;
+      background: #111;
+      color: #fff;
+      border: 1px solid #990000;
+    }
+
+    button {
+      background-color: #990000;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #ff0000;
+      box-shadow: 0 0 10px #ff0000;
+    }
+
+    main section {
+      display: none;
+      animation: fadeIn 0.5s ease-in;
+    }
+
+    main section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .setting-item {
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
