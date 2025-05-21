@@ -1,76 +1,78 @@
 body {
-    font-family: "Ubuntu";
-    font-size: "25px";
-    text-align: center;
-    background-color: #1c9a54;
-    background-repeat: no-repeat;
-    background-size: cover
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+  background: #0c0c0c;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
 }
 
 .container {
-    margin-top: 10%;
-    font-family: "Ubuntu";
-    font-size: "50px";
-    color: #FFF;
+  padding: 2rem;
+  max-width: 600px;
 }
 
-.container p {
-    font-size: 50px;
-    margin-bottom: 2px;
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 1rem;
 }
 
-#iurl {
-    background-color: inherit;
-    width: 100%;
-    height: 28px;
-    border: solid 1px #FFF;
-    font-family: "Ubuntu";
-    font-size: 16px;
-    color: #eee;
-    padding: 8px 0px;
-    margin-bottom: 5px;
-    box-sizing: content-box;
-    text-align: center;
-    border-radius: 2px;
+.title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
 }
 
-#btn {
-    background-color: inherit;
-    width: 100%;
-    height: 28px;
-    border: solid 1px #0066ff;
-    font-family: "Ubuntu";
-    font-size: 16px;
-    color: #0066ff;
-    padding: 8px 0px;
-    box-sizing: content-box;
-    transition: 0.3s;
-    border-radius: 2px;
+.subtitle {
+  font-size: 1.2rem;
+  color: #bbbbbb;
+  margin-bottom: 2rem;
 }
 
-#btn:hover {
-    background: #0066ff;
-    color: #fff;
-    background-repeat: no-repeat;
+.input-container {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
-.container a {
-    height: 20px;
-    background: inherit;
-    background-size: cover;
-    color: #ddd;
-    border: 0;
-    cursor: pointer;
-    font-family: "Ubuntu";
-    font-size: 17px;
-    transition: 0.3s;
+input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 70%;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #1a1a1a;
+  color: white;
 }
 
-.container a:hover {
-    font-size: 23;
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  background: #00aaff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.url {
-    width: 300px;
-    margin: auto;
+button:hover {
+  background: #008ecc;
+}
+
+.source-link {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
