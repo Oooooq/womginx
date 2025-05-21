@@ -162,3 +162,31 @@ a:hover {
   text-decoration: underline;
   color: #ff7777;
 }
+
+.navbar {
+  background-color: #1a0000;
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: #ff3333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a.active,
+.navbar a:hover {
+  color: #ffffff;
+}
+
