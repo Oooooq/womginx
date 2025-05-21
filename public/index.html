@@ -1,108 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>DYNX Proxy</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
-
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-  <!-- Stylesheet -->
+  <link rel="shortcut icon" href="logo.png" type="image/png">
   <link rel="stylesheet" href="styles.css" />
-
-  <link rel="shortcut icon" type="image/png" href="logo.png" />
 </head>
-
 <body>
-  <nav class="navbar">
-    <ul>
-      <li><a href="#home" class="active">Home</a></li>
-      <li><a href="#games">Games</a></li>
-      <li><a href="#settings">Settings</a></li>
-    </ul>
-  </nav>
+  <div class="container">
+    <img src="logo-full.png" width="180" height="180" alt="Logo" />
+    <h1 class="glow-text">DYNX Proxy</h1>
 
-  <main>
-    <!-- Home -->
-    <section class="container" id="home">
-      <img src="logo-full.png" alt="DYNX Proxy Logo" width="250" height="250" class="logo" />
-      <h1>Welcome to DYNX Proxy</h1>
-      <p>Input your URL below (without https://) and browse securely & anonymously.</p>
-      <div class="input-group">
-        <input
-          type="text"
-          id="url-target"
-          placeholder="example.com"
-          onkeydown="if(event.key==='Enter') go()"
-          autocomplete="off"
-        />
-        <button onclick="go()">Go!</button>
-      </div>
-      <p class="github-link">
-        View GitHub source
-        <a href="https://github.com/binary-person/womginx" target="_blank" rel="noopener noreferrer">here</a>
-      </p>
-    </section>
+    <div class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#games">Games</a>
+      <a href="#settings">Settings</a>
+    </div>
 
-    <!-- Games -->
-    <section class="container" id="games" style="display:none;">
-      <h2>Games Library</h2>
-      <p>Enjoy these proxy-compatible games!</p>
-      <div class="games-grid">
-        <div class="game-card">
-          <h3>Classic Snake</h3>
-          <iframe
-            src="https://playsnake.org/"
-            width="280"
-            height="180"
-            frameborder="0"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
+    <main>
+      <section id="home" class="active">
+        <p>Enter a URL below to proxy it:</p>
+        <input id="url-target" placeholder="www.google.com" onkeydown="if(event.key==='Enter') go()" />
+        <button onclick="go()">Go</button>
+      </section>
+
+      <section id="games">
+        <p>Games will go here! Coming soon.</p>
+      </section>
+
+      <section id="settings">
+        <div class="setting-item">
+          <label><input type="checkbox" id="dark-mode-toggle" /> Dark Mode</label>
         </div>
-        <div class="game-card">
-          <h3>Tetris</h3>
-          <iframe
-            src="https://tetris.com/play-tetris"
-            width="280"
-            height="180"
-            frameborder="0"
-            allowfullscreen
-            loading="lazy"
-          ></iframe>
+        <div class="setting-item">
+          <label><input type="checkbox" id="block-cookies-toggle" /> Block Cookies</label>
         </div>
-        <!-- Add more games here -->
-      </div>
-    </section>
-
-    <!-- Settings -->
-    <section class="container" id="settings" style="display:none;">
-      <h2>Settings</h2>
-      <p>Customize your proxy experience.</p>
-      <form id="settings-form">
-        <label>
-          <input type="checkbox" id="dark-mode-toggle" />
-          Enable Dark Mode
-        </label>
-        <label>
-          <input type="checkbox" id="block-cookies-toggle" />
-          Block Cookies
-        </label>
-        <label>
-          <input type="checkbox" id="enable-javascript-toggle" checked />
-          Enable JavaScript
-        </label>
-        <button type="button" onclick="saveSettings()">Save Settings</button>
-      </form>
-    </section>
-  </main>
+        <div class="setting-item">
+          <label><input type="checkbox" id="enable-javascript-toggle" /> Enable JavaScript</label>
+        </div>
+        <button onclick="saveSettings()">Save Settings</button>
+      </section>
+    </main>
+  </div>
 
   <script src="scripts.js"></script>
 </body>
-
 </html>
