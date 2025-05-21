@@ -1,63 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DYNX Proxy</title>
-  <link rel="shortcut icon" href="logo.png" type="image/png" />
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="shortcut icon" type="image/png" href="logo.png" />
 </head>
+
 <body>
-  <div class="container fade-in">
-    <img src="logo-full.png" alt="DYNX Proxy Logo" class="logo" />
-    <h1 class="title">Welcome to DYNX Proxy</h1>
-    <p class="subtitle">Fast, secure, and reliable browsing</p>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#games">Games</a></li>
+      <li><a href="#settings">Settings</a></li>
+    </ul>
+  </nav>
 
-    <nav class="navbar">
-  <ul>
-    <li><a href="#home" class="active">Home</a></li>
-    <li><a href="#games">Games</a></li>
-    <li><a href="#settings">Settings</a></li>
-  </ul>
-</nav>
+  <main>
+    <!-- Home -->
+    <section class="container" id="home">
+      <img src="logo-full.png" alt="DYNX Proxy Logo" width="250" height="250" class="logo" />
+      <h1>Welcome to DYNX Proxy</h1>
+      <p>Input your URL below (without https://) and browse securely & anonymously.</p>
+      <div class="input-group">
+        <input
+          type="text"
+          id="url-target"
+          placeholder="example.com"
+          onkeydown="if(event.key==='Enter') go()"
+          autocomplete="off"
+        />
+        <button onclick="go()">Go!</button>
+      </div>
+      <p class="github-link">
+        View GitHub source
+        <a href="https://github.com/binary-person/womginx" target="_blank" rel="noopener noreferrer">here</a>
+      </p>
+    </section>
 
-<div class="container" id="home">
-  <!-- Home content -->
-</div>
+    <!-- Games -->
+    <section class="container" id="games" style="display:none;">
+      <h2>Games Library</h2>
+      <p>Enjoy these proxy-compatible games!</p>
+      <div class="games-grid">
+        <div class="game-card">
+          <h3>Classic Snake</h3>
+          <iframe
+            src="https://playsnake.org/"
+            width="280"
+            height="180"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="game-card">
+          <h3>Tetris</h3>
+          <iframe
+            src="https://tetris.com/play-tetris"
+            width="280"
+            height="180"
+            frameborder="0"
+            allowfullscreen
+            loading="lazy"
+          ></iframe>
+        </div>
+        <!-- Add more games here -->
+      </div>
+    </section>
 
-<div class="container" id="games" style="display:none;">
-  <!-- Games content -->
-</div>
+    <!-- Settings -->
+    <section class="container" id="settings" style="display:none;">
+      <h2>Settings</h2>
+      <p>Customize your proxy experience.</p>
+      <form id="settings-form">
+        <label>
+          <input type="checkbox" id="dark-mode-toggle" />
+          Enable Dark Mode
+        </label>
+        <label>
+          <input type="checkbox" id="block-cookies-toggle" />
+          Block Cookies
+        </label>
+        <label>
+          <input type="checkbox" id="enable-javascript-toggle" checked />
+          Enable JavaScript
+        </label>
+        <button type="button" onclick="saveSettings()">Save Settings</button>
+      </form>
+    </section>
+  </main>
 
-<div class="container" id="settings" style="display:none;">
-  <!-- Settings content -->
-</div>
-
-    <div class="input-container">
-      <input
-        id="url-target"
-        type="text"
-        placeholder="Enter a URL (e.g., google.com)"
-        onkeydown='if(event.key==="Enter") go()'
-      />
-      <button onclick="go()">Go!</button>
-    </div>
-
-    <p class="source-link">
-      View the source on <a href="https://github.com/binary-person/womginx" target="_blank">GitHub</a>.
-    </p>
-  </div>
-
-  <script>
-    function go() {
-      const input = document.getElementById('url-target');
-      if (input.value.trim()) {
-        window.location.href = '/main/' + input.value.trim();
-      } else {
-        alert('Please enter a valid URL.');
-      }
-    }
-  </script>
+  <script src="scripts.js"></script>
 </body>
+
 </html>
