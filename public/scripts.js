@@ -44,6 +44,7 @@ window.onload = () => {
   else document.body.style.backgroundColor = '#fff';
 };
 
+// Save settings function
 function saveSettings() {
   const darkMode = document.getElementById('dark-mode-toggle').checked;
   const blockCookies = document.getElementById('block-cookies-toggle').checked;
@@ -57,3 +58,20 @@ function saveSettings() {
   if (darkMode) document.body.style.backgroundColor = '#0d0d0d';
   else document.body.style.backgroundColor = '#fff';
 }
+
+// --- Animated tab title ---
+// Text to animate in the browser tab
+const titleText = 'DYNX Proxy - Secure & Fast ';
+let index = 0;
+
+function animateTitle() {
+  document.title = titleText.substring(0, index);
+  index++;
+  if (index > titleText.length) {
+    index = 0; // Restart animation
+  }
+  setTimeout(animateTitle, 200); // Animation speed (ms)
+}
+
+// Start the animation
+animateTitle();
