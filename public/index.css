@@ -11,6 +11,26 @@ body {
   overflow: hidden;
 }
 
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 10px #ff0000;
+    background-color: #1a0000;
+  }
+  50% {
+    box-shadow: 0 0 20px #ff3333;
+    background-color: #2a0000;
+  }
+  100% {
+    box-shadow: 0 0 10px #ff0000;
+    background-color: #1a0000;
+  }
+}
+
+.container {
+  animation: glowPulse 3s infinite;
+
+}
+
 /* Animation */
 @keyframes fadeIn {
   0% {
